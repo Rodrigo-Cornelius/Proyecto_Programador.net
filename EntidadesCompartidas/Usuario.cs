@@ -24,7 +24,7 @@ namespace EntidadesCompartidas
                     throw new Exception("Debe escribir un nombre de usuario");
                 else if (value.Trim().Length > 30)
                     throw new Exception("El nombre de usuario no puede exceder los 30 caracteres");
-                else if (value.Trim().Length >= 3)
+                else if (value.Trim().Length <= 3)
                 {
                     throw new Exception("El nombre de usuario debe tener al menos 3 caracteres");
                 }
@@ -40,7 +40,7 @@ namespace EntidadesCompartidas
                     throw new Exception("Debe escribir una contraseña");
                 else if (value.Trim().Length > 30)
                     throw new Exception("La contraseña no puede exceder los 30 caracteres");
-                else if (value.Trim().Length >= 8)
+                else if (value.Trim().Length < 8)
                 {
                     throw new Exception("La contraseña debe tener al menos 8 caracteres");
                 }
@@ -68,7 +68,7 @@ namespace EntidadesCompartidas
                     throw new Exception("Debe escribir un apellido");
                 else if (value.Trim().Length > 30)
                     throw new Exception("El apellido no puede exceder los 30 caracteres");
-                nombre = value.Trim();
+                apellido = value.Trim();
             }
         }
         #endregion

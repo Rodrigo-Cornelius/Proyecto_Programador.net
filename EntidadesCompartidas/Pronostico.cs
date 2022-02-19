@@ -54,10 +54,10 @@ namespace EntidadesCompartidas
             get { return tipoCielo; }
             set
             {
-                string[] datosPosibles = { "espejado", "parcialmente nuboso", "nuboso" };
+                string[] datosPosibles = { "despejado", "parcialmente nuboso", "nuboso" };
                 if (Array.IndexOf(datosPosibles, value.ToLower().Trim()) == -1)
                 {
-                    throw new Exception("Los valores para tipo de cielo solo pueden ser: espejado, parcialmente nuboso o nuboso");
+                    throw new Exception("Los valores para tipo de cielo solo pueden ser: despejado, parcialmente nuboso o nuboso");
                 }
                 tipoCielo = value.ToLower().Trim();
             }
@@ -132,6 +132,12 @@ namespace EntidadesCompartidas
         #endregion
 
         #region Operaciones
+        public override string ToString()
+        {
+            return ("Codigo: " + Codigo + "\nTemperatura Maxima: " + MaxTemp + "°" + "\nTemperatura Minima: " + MinTemp + "°" +
+                "\nVelocidad del Viento: " + VelViento + "hPa" + "\nTipo de Cielo: " + TipoCielo +
+                "\nFecha y hora: " + FechaHora + "\nProbabilidad de Lluvias: " + "%" + ProbLluvias + "\nCiudad: " + Ciudad.Nombre + "\nUsuario que lo ingresa: " + Usuario.UserName);
+        }
         #endregion
     }
 }

@@ -146,7 +146,7 @@ namespace Persistencia
 
             SqlCommand oComando = new SqlCommand("ListadoPronosticoXFecha", oConexion);
             oComando.CommandType = CommandType.StoredProcedure;
-            oComando.Parameters.AddWithValue("@fecha", pDateTime);
+            oComando.Parameters.AddWithValue("@Fecha", pDateTime);
 
             try
             {
