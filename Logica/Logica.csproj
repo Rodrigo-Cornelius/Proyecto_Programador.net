@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5F76E966-BE41-4363-BC72-9CA9DEC602EF}</ProjectGuid>
+    <ProjectGuid>{96C32CF6-A1B8-4F47-ABC7-0CBFA8AB25C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Persistencia</RootNamespace>
-    <AssemblyName>Persistencia</AssemblyName>
+    <RootNamespace>Logica</RootNamespace>
+    <AssemblyName>Logica</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexion.cs" />
-    <Compile Include="PersistenciaPronostico.cs" />
-    <Compile Include="PersistenciaCiudad.cs" />
-    <Compile Include="PersistenciaPais.cs" />
-    <Compile Include="PersistenciaUsuario.cs" />
+    <Compile Include="LogicaCiudades.cs" />
+    <Compile Include="LogicaPaises.cs" />
+    <Compile Include="LogicaPronosticos.cs" />
+    <Compile Include="LogicaUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntidadesCompartidas\EntidadesCompartidas.csproj">
       <Project>{57F361A2-9261-4080-8E76-B56026ED50E6}</Project>
       <Name>EntidadesCompartidas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{5F76E966-BE41-4363-BC72-9CA9DEC602EF}</Project>
+      <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
