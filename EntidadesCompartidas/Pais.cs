@@ -54,7 +54,7 @@ namespace EntidadesCompartidas
         #region Operaciones
         public override string ToString()
         {
-            return ("Codigo: " + codigoP + "Nombre: " + nombre);
+            return ("Codigo Pais: " + CodigoP + "\nNombre del Pais: " + Nombre);
         }
         #endregion
        

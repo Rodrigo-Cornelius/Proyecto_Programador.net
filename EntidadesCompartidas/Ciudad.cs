@@ -66,6 +66,10 @@ namespace EntidadesCompartidas
         #endregion
 
         #region Operaciones
+        public override string ToString()
+        {
+            return ("Codigo pais: " + CodigoP + "Codigo ciudad: " + CodigoC + "\nNombre de la Ciudad: " + Nombre);
+        }
         #endregion
     }
 }
