@@ -52,7 +52,10 @@ namespace EntidadesCompartidas
         #endregion
 
         #region Operaciones
-
+        public override string ToString()
+        {
+            return ("Codigo: " + codigoP + "Nombre: " + nombre);
+        }
         #endregion
        
     }
