@@ -9,8 +9,8 @@ namespace EntidadesCompartidas
     {
         #region Atributos
         int codigo;
-        float maxTemp;
-        float minTemp;
+        int maxTemp;
+        int minTemp;
         int velViento;
         string tipoCielo;
         DateTime fechaHora;
@@ -25,13 +25,13 @@ namespace EntidadesCompartidas
             get { return codigo; }
             set { codigo = value; }
         }
-        public float MaxTemp
+        public int MaxTemp
         {
             get { return maxTemp; }
             set { maxTemp = value; }
                
         }
-        public float MinTemp
+        public int MinTemp
         {
             get { return minTemp; }
             set { minTemp = value; }
@@ -113,7 +113,7 @@ namespace EntidadesCompartidas
         #endregion
 
         #region Constructor Completo
-        public Pronostico(int pCodigo, float pMaxTemp, float pMinTemp, int pVelViento, string pTipoCielo, DateTime pFechaHora, int pProbLluvias, Ciudad pCiudad, Usuario pUsuario)
+        public Pronostico(int pCodigo, int pMaxTemp, int pMinTemp, int pVelViento, string pTipoCielo, DateTime pFechaHora, int pProbLluvias, Ciudad pCiudad, Usuario pUsuario)
         {
             if (pMaxTemp <= pMinTemp)
             {
