@@ -12,6 +12,62 @@ namespace Persistencia
 {
     public class PersistenciaPronostico
     {
+        public static List<Pronostico> Buscar(Usuario pUserName)
+        {
+            List<Pronostico> resPronos = new List<Pronostico>();
+            string tipoCielo;
+            int probLluvias, codigo, velViento;
+            int maxTemp, minTemp;
+            DateTime fechaHora;            
+            Ciudad ciudad;
+            
+            Pronostico oProno = null;
+
+            SqlDataReader oReader;
+
+            SqlConnection oConexion = new SqlConnection(Conexion.STR);
+            SqlCommand oComando = new SqlCommand("BuscarUsuProno", oConexion);
+            oComando.CommandType = CommandType.StoredProcedure;
+
+            oComando.Parameters.AddWithValue("@UserName", pUserName.UserName);
+
+            try
+            {
+                oConexion.Open();
+                oReader = oComando.ExecuteReader();
+
+                if (oReader.HasRows)
+                {
+                    if (oReader.Read())
+                    {
+                        codigo = (int)oReader["codigo"];
+                        probLluvias = (int)oReader["probLluvias"];
+                        fechaHora = Convert.ToDateTime(oReader["fechaHora"]);
+                        tipoCielo = (string)oReader["tipoCielo"];
+                        velViento = (int)oReader["velViento"];
+                        maxTemp = (int)oReader["maxTemp"];
+                        minTemp = (int)oReader["minTemp"];
+                        ciudad = PersistenciaCiudad.Buscar((string)oReader["codigoC"]);
+
+                        oProno = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, fechaHora, probLluvias, ciudad, pUserName);
+                        resPronos.Add(oProno);
+                    }
+
+                }
+                oReader.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                oConexion.Close();
+            }
+            return resPronos;
+        }
+
         public static int Agregar(Pronostico pPronostico)
         {
             int codPeri;
@@ -87,7 +143,6 @@ namespace Persistencia
             SqlCommand oComando = new SqlCommand("ListadoPronosticosXCiudad", oConexion);
             oComando.CommandType = CommandType.StoredProcedure;
             oComando.Parameters.AddWithValue("@codC", pCiudad.CodigoC);
-            oComando.Parameters.AddWithValue("@codP", pCiudad.CodigoP);
 
             try
             {
@@ -108,7 +163,7 @@ namespace Persistencia
                         userName = Convert.ToString(oReader["userName"]);
                         fechaHora = Convert.ToDateTime(oReader["fechaHora"]);
 
-                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC,pCiudad.CodigoP);
+                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC);
                         usuario = PersistenciaUsuario.Buscar(userName);
 
                         Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, fechaHora, probLluvias, ciudad, usuario);
@@ -135,7 +190,7 @@ namespace Persistencia
             int codigo;
             int maxTemp, minTemp;
             int velViento, probLluvias;
-            string tipoCielo, userName, codigoC, codigoP;
+            string tipoCielo, userName, codigoC;
             Ciudad ciudad;
             Usuario usuario;
 
@@ -167,9 +222,8 @@ namespace Persistencia
                         tipoCielo = Convert.ToString(oReader["tipoCielo"]);
                         userName = Convert.ToString(oReader["userName"]);
                         codigoC = Convert.ToString(oReader["codigoC"]);
-                        codigoP = Convert.ToString(oReader["codigoP"]);
 
-                        ciudad = PersistenciaCiudad.Buscar(codigoC, codigoP);
+                        ciudad = PersistenciaCiudad.Buscar(codigoC);
                         usuario = PersistenciaUsuario.Buscar(userName);
 
                         Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, pDateTime, probLluvias, ciudad, usuario);

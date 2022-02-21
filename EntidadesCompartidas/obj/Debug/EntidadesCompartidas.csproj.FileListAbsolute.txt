@@ -2,7 +2,7 @@ C:\Users\Trico\Desktop\Nueva carpeta\Proyecto_Programador.net\EntidadesCompartid
 C:\Users\Trico\Desktop\Nueva carpeta\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
 C:\Users\Trico\Desktop\Nueva carpeta\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
 C:\Users\Trico\Desktop\Nueva carpeta\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
-C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
-C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
-C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
-C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+C:\Users\Trico\Desktop\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Trico\Desktop\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Trico\Desktop\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\Trico\Desktop\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb

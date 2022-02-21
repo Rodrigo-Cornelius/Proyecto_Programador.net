@@ -12,7 +12,7 @@ public partial class Logueo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        txtPass.Attributes.Add("Type", "Password");
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
