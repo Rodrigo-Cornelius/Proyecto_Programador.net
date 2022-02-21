@@ -10,6 +10,11 @@ namespace Logica
 {
     public class LogicaUsuarios
     {
+        public static Usuario Buscar(string plogUser)
+        {
+            return PersistenciaUsuario.Buscar(plogUser);
+        }
+
         public static Usuario Logueo (string pUserName, string pPass)
         {
             return PersistenciaUsuario.Logueo(pUserName, pPass);
