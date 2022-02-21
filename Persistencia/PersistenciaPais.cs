@@ -12,50 +12,6 @@ namespace Persistencia
 {
     public class PersistenciaPais
     {
-
-        public static Pais Buscar(string pCodP)
-        {
-            string nombre, codigoP;
-            Pais resPais = null;
-
-            SqlDataReader oReader;
-
-            SqlConnection oConexion = new SqlConnection(Conexion.STR);
-            SqlCommand oComando = new SqlCommand("BuscarPais", oConexion);
-            oComando.CommandType = CommandType.StoredProcedure;
-
-            oComando.Parameters.AddWithValue("@codP", pCodP);
-
-            try
-            {
-                oConexion.Open();
-                oReader = oComando.ExecuteReader();
-
-                if (oReader.HasRows)
-                {
-                    if (oReader.Read())
-                    {
-                        nombre = (string)oReader["nombre"];
-                        codigoP = (string)oReader["codigoP"];
-
-                        resPais = new Pais(pCodP, nombre);
-                    }
-
-                }
-                oReader.Close();
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                oConexion.Close();
-            }
-            return resPais;
-        }
-
         public static void AgregarPais(Pais pPais)
         {
             SqlConnection oConexion = new SqlConnection(Conexion.STR);
