@@ -87,6 +87,7 @@ namespace Persistencia
             SqlCommand oComando = new SqlCommand("ListadoPronosticosXCiudad", oConexion);
             oComando.CommandType = CommandType.StoredProcedure;
             oComando.Parameters.AddWithValue("@codC", pCiudad.CodigoC);
+            oComando.Parameters.AddWithValue("@codP", pCiudad.CodigoP);
 
             try
             {
@@ -107,7 +108,7 @@ namespace Persistencia
                         userName = Convert.ToString(oReader["userName"]);
                         fechaHora = Convert.ToDateTime(oReader["fechaHora"]);
 
-                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC);
+                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC,pCiudad.CodigoP);
                         usuario = PersistenciaUsuario.Buscar(userName);
 
                         Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, fechaHora, probLluvias, ciudad, usuario);
@@ -134,7 +135,7 @@ namespace Persistencia
             int codigo;
             float maxTemp, minTemp;
             int velViento, probLluvias;
-            string tipoCielo, userName, codigoC;
+            string tipoCielo, userName, codigoC, codigoP;
             Ciudad ciudad;
             Usuario usuario;
 
@@ -166,8 +167,9 @@ namespace Persistencia
                         tipoCielo = Convert.ToString(oReader["tipoCielo"]);
                         userName = Convert.ToString(oReader["userName"]);
                         codigoC = Convert.ToString(oReader["codigoC"]);
+                        codigoP = Convert.ToString(oReader["codigoP"]);
 
-                        ciudad = PersistenciaCiudad.Buscar(codigoC);
+                        ciudad = PersistenciaCiudad.Buscar(codigoC, codigoP);
                         usuario = PersistenciaUsuario.Buscar(userName);
 
                         Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, pDateTime, probLluvias, ciudad, usuario);
