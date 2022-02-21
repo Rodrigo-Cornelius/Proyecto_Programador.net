@@ -71,7 +71,7 @@ namespace Persistencia
         {
             List<Pronostico> resPronosticos = new List<Pronostico>();
             int codigo;
-            float maxTemp, minTemp;
+            int maxTemp, minTemp;
             int velViento, probLluvias;
             string tipoCielo, userName;
             DateTime fechaHora;
@@ -133,7 +133,7 @@ namespace Persistencia
         {
             List<Pronostico> resPronosticos = new List<Pronostico>();
             int codigo;
-            float maxTemp, minTemp;
+            int maxTemp, minTemp;
             int velViento, probLluvias;
             string tipoCielo, userName, codigoC, codigoP;
             Ciudad ciudad;
