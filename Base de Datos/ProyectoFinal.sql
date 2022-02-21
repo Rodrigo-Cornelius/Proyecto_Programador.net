@@ -8,10 +8,6 @@ end
 go
 
 create database Proyecto
-on(
-	name = Proyecto,
-	filename = 'C:\Proyecto\Proyecto.mdf'
-)
 go
 
 use Proyecto
@@ -53,8 +49,8 @@ create table Pronosticos
 	FechaHora datetime not null, check(FechaHora >= GETDATE()),
 	TipoCielo varchar(19) not null check (TipoCielo in('Despejado', 'Parcialmente nuboso', 'Nuboso')),
 	VelViento int not null check(VelViento > 0),
-	MaxTemp float not null,
-	MinTemp float not null,
+	MaxTemp int not null,
+	MinTemp int not null,
 	CodigoC varchar(3) not null,
 	CodigoP varchar(3) not null,
 	foreign key (CodigoC, CodigoP) references Ciudades(CodigoC, CodigoP),
@@ -104,9 +100,9 @@ insert Usuarios values ('tmcpharlain0', 'lEX85fZH', 'Thelma', 'McPharlain'),
 go
 
 
-insert Pronosticos values (15, '19/02/2022 17:11', 'Despejado', 7, 33, 12, 'MON', 'URU', 'bpirt5'),
+insert Pronosticos values (15, '19/02/2032 17:11', 'Despejado', 7, 33, 12, 'MON', 'URU', 'bpirt5'),
 						  (45, '22/06/2023 12:10', 'Parcialmente nuboso', 47, 23, 10, 'MON', 'URU', 'jparram6'),
-						  (90, '19/02/2022 17:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3')
+						  (90, '19/02/2032 17:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3')
 go
 
 
@@ -209,10 +205,11 @@ go
 -- BUSCAR CIUDAD
 
 create proc BuscarCiudad
-@CodC varchar(3)
+@CodC varchar(3),
+@CodP varchar(3)
 as
 begin
-	select * from Ciudades where CodigoC = @CodC
+	select * from Ciudades where CodigoC = @CodC and CodigoP = @CodP
 end
 go
 
@@ -355,8 +352,8 @@ create proc AltaPronostico
 @FechaHora datetime,
 @TipoCielo varchar(19),
 @VelViento int,
-@MaxTemp float,
-@MinTemp float,
+@MaxTemp int,
+@MinTemp int,
 @CodC varchar(3),
 @CodP varchar(3),
 @UserName varchar(30)
@@ -399,7 +396,18 @@ go
 
 --exec ListadoPaises
 
+-- LISTADO CIUDADES
+
+create proc ListadoCiudades
+as
+begin
+	select * from Ciudades
+end
+go
+
+
 -- LISTADO CIUDADES POR PAIS
+
 
 create proc ListadoCiudadesXPais
 @CodP varchar(3)
@@ -415,10 +423,11 @@ go
 -- LISTADO PRONOSTICOS POR CIUDAD
 
 create proc ListadoPronosticosXCiudad
-@CodC varchar(3)
+@CodC varchar(3),
+@CodP varchar(3)
 as
 begin
-	select * from Pronosticos where CodigoC = @CodC
+	select * from Pronosticos where CodigoC = @CodC and CodigoP = @CodP
 end
 go
 
@@ -434,3 +443,4 @@ begin
 	select * from Pronosticos where CONVERT(varchar,FechaHora,3) = @Fecha
 end
 go
+
