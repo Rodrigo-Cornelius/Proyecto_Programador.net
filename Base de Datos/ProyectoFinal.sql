@@ -53,8 +53,8 @@ create table Pronosticos
 	FechaHora datetime not null, check(FechaHora >= GETDATE()),
 	TipoCielo varchar(19) not null check (TipoCielo in('Despejado', 'Parcialmente nuboso', 'Nuboso')),
 	VelViento int not null check(VelViento > 0),
-	MaxTemp float not null,
-	MinTemp float not null,
+	MaxTemp int not null,
+	MinTemp int not null,
 	CodigoC varchar(3) not null,
 	CodigoP varchar(3) not null,
 	foreign key (CodigoC, CodigoP) references Ciudades(CodigoC, CodigoP),
@@ -103,10 +103,9 @@ insert Usuarios values ('tmcpharlain0', 'lEX85fZH', 'Thelma', 'McPharlain'),
 					   ('pleggen9', 'PzYg8Mww', 'Piggy', 'Leggen')
 go
 
-
-insert Pronosticos values (15, '19/02/2022 17:11', 'Despejado', 7, 33, 12, 'MON', 'URU', 'bpirt5'),
+insert Pronosticos values (15, '21/02/2022 20:11', 'Despejado', 7, 33, 12, 'MON', 'URU', 'bpirt5'),
 						  (45, '22/06/2023 12:10', 'Parcialmente nuboso', 47, 23, 10, 'MON', 'URU', 'jparram6'),
-						  (90, '19/02/2022 17:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3')
+						  (90, '21/02/2022 20:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3')
 go
 
 
@@ -350,13 +349,24 @@ go
 
 -- REGISTRAR PRONOSTICO
 
+create proc BuscarUsuProno
+@UserName varchar(30)
+as
+begin
+	select * from Pronosticos where UserName = @UserName
+end
+go
+
+--declare @res int
+--exec @res = BuscarUsuProno 'bpirt5'
+
 create proc AltaPronostico
 @Lluvias int,
 @FechaHora datetime,
 @TipoCielo varchar(19),
 @VelViento int,
-@MaxTemp float,
-@MinTemp float,
+@MaxTemp int,
+@MinTemp int,
 @CodC varchar(3),
 @CodP varchar(3),
 @UserName varchar(30)
