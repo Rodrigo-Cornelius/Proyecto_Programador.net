@@ -26,9 +26,19 @@ namespace Logica
             PersistenciaCiudad.EliminarCiudad(pCiudad);
         }
 
+        public static List<Ciudad> ListarCiudades()
+        {
+            return PersistenciaCiudad.ListarCiudades();
+        }
+
         public static List<Ciudad> ListarCiudades(Pais pPais)
         {
             return PersistenciaCiudad.ListarCiudades(pPais);
+        }
+
+        public static void Modificar(Ciudad pCiudad)
+        {
+            PersistenciaCiudad.Modificar(pCiudad);
         }
     }
 }
