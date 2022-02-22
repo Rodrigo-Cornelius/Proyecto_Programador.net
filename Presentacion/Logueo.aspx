@@ -51,6 +51,11 @@
                     <asp:Label ID="lblerror" runat="server"></asp:Label>
                 </td>
             </tr>
+            <tr>
+                <td align="center" class="style3" colspan="2">
+                    <asp:LinkButton ID="lbtnVolver" runat="server" PostBackUrl="~/Default.aspx">Volver</asp:LinkButton>
+                </td>
+            </tr>
         </table>
     </div>
     </form>

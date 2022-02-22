@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesCompartidas", "EntidadesCompartidas\EntidadesCompartidas.csproj", "{57F361A2-9261-4080-8E76-B56026ED50E6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{5F76E966-BE41-4363-BC72-9CA9DEC602EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{96C32CF6-A1B8-4F47-ABC7-0CBFA8AB25C2}"
@@ -25,8 +23,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Presentacion", "Presentacio
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "53476"
+		VWDPort = "52817"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesCompartidas", "EntidadesCompartidas\EntidadesCompartidas.csproj", "{57F361A2-9261-4080-8E76-B56026ED50E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{57F361A2-9261-4080-8E76-B56026ED50E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57F361A2-9261-4080-8E76-B56026ED50E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57F361A2-9261-4080-8E76-B56026ED50E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57F361A2-9261-4080-8E76-B56026ED50E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5F76E966-BE41-4363-BC72-9CA9DEC602EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F76E966-BE41-4363-BC72-9CA9DEC602EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F76E966-BE41-4363-BC72-9CA9DEC602EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,6 +46,10 @@ Global
 		{0C1DCF47-891B-4CEE-92BA-E18BE3D226AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C1DCF47-891B-4CEE-92BA-E18BE3D226AD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{0C1DCF47-891B-4CEE-92BA-E18BE3D226AD}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{57F361A2-9261-4080-8E76-B56026ED50E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F361A2-9261-4080-8E76-B56026ED50E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F361A2-9261-4080-8E76-B56026ED50E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F361A2-9261-4080-8E76-B56026ED50E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

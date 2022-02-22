@@ -347,6 +347,14 @@ go
 
 -- REGISTRAR PRONOSTICO
 
+create proc BuscarUsuProno
+@UserName varchar(30)
+as
+begin
+	select * from Pronosticos where UserName = @UserName
+end
+go
+
 create proc AltaPronostico
 @Lluvias int,
 @FechaHora datetime,
