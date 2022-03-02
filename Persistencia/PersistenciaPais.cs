@@ -12,7 +12,6 @@ namespace Persistencia
 {
     public class PersistenciaPais
     {
-
         public static Pais Buscar(string pCodP)
         {
             string nombre, codigoP;

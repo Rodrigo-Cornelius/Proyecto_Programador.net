@@ -10,7 +10,6 @@ namespace Logica
 {
     public class LogicaPaises
     {
-
         public static Pais Buscar(string pCodP)
         {
             return PersistenciaPais.Buscar(pCodP);

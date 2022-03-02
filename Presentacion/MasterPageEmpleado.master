@@ -25,18 +25,10 @@
                             <asp:MenuItem Text="Menú Principal" Value="Menú Principal">
                                 <asp:MenuItem Text="ABM Paises" Value="ABM Paises" 
                                     NavigateUrl="~/ABMPaises.aspx"></asp:MenuItem>
-                                
-                                <asp:MenuItem Text="ABM Paises" Value="ABM Paises"></asp:MenuItem>
                                 <asp:MenuItem Text="ABM Ciudades" Value="ABM Ciudades" 
                                     NavigateUrl="~/ABMCiudades.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="ABM Usuarios" Value="ABM Usuarios" 
                                     NavigateUrl="~/ABMUsuarios.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Registrar Pronostico" Value="Registrar Pronostico">
-
-
-
-
-                                <asp:MenuItem Text="ABM Usuarios" Value="ABM Usuarios"></asp:MenuItem>
                                 <asp:MenuItem Text="Registrar Pronostico" Value="Registrar Pronostico" 
                                     NavigateUrl="~/RegistrarPronostico.aspx">
                                 </asp:MenuItem>
