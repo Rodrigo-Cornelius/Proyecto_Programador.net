@@ -84,7 +84,7 @@ namespace Persistencia
             oComando.Parameters.AddWithValue("@MinTemp", pPronostico.MinTemp);
             oComando.Parameters.AddWithValue("@CodC", pPronostico.Ciudad.CodigoC);
             oComando.Parameters.AddWithValue("@CodP", pPronostico.Ciudad.CodigoP);
-            oComando.Parameters.AddWithValue("@UserName", pPronostico.Usuario);
+            oComando.Parameters.AddWithValue("@UserName", pPronostico.Usuario.UserName);
 
             SqlParameter oRetorno = new SqlParameter("@Retorno", SqlDbType.Int);
             oRetorno.Direction = ParameterDirection.ReturnValue;

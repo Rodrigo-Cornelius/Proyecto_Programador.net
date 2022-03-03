@@ -58,10 +58,17 @@
         </tr>
         <tr>
             <td class="style1">
-                <asp:Label ID="Label4" runat="server" Text="Fecha y Hora:"></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="Fecha:"></asp:Label>
             </td>
             <td class="style1" colspan="2">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
+                </td>
+        </tr>
+        <tr>
+            <td class="style1">
+                Hora:</td>
+            <td class="style1" colspan="2">
+                <asp:TextBox ID="txtHora" runat="server"></asp:TextBox>
                 </td>
         </tr>
         <tr>
@@ -97,8 +104,7 @@
         </tr>
         <tr>
             <td align="center" colspan="3">
-                <asp:LinkButton ID="lbtnVolver" runat="server">Volver</asp:LinkButton>
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>
