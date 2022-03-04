@@ -223,7 +223,7 @@ namespace Persistencia
                         userName = Convert.ToString(oReader["userName"]);
                         fechaHora = Convert.ToDateTime(oReader["fechaHora"]);
 
-                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC,pCiudad.CodigoP);
+                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC, pCiudad.CodigoP);
                         usuario = PersistenciaUsuario.Buscar(userName);
 
                         Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, fechaHora, probLluvias, ciudad, usuario);

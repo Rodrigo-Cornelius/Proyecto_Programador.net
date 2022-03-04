@@ -440,7 +440,7 @@ end
 go
 
 --declare @res int
---exec @res = ListadoPronosticosXCiudad 'BAS'
+--exec @res = ListadoPronosticosXCiudad 'MON', 'URU'
 
 -- LISTADO POR FECHA
 

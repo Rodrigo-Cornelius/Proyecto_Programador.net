@@ -6,21 +6,22 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body bgcolor="#efefef">
     <form id="form1" runat="server">
     <div>
     
         <table style="width:100%;">
             <tr>
                 <td align="center" colspan="3">
-                    <asp:Label ID="Label1" runat="server" Text="LISTADO DE PRONOSTICOS DEL DIA"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="LISTADO DE PRONOSTICOS DEL DIA" 
+                        Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="#FF6600"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td>
                     &nbsp;</td>
                 <td align="center">
-                    <asp:Label ID="lblFecha" runat="server"></asp:Label>
+                    <asp:Label ID="lblFecha" runat="server" Font-Size="Large" ForeColor="#FF6600"></asp:Label>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -43,7 +44,7 @@
             <tr>
                 <td align="center" colspan="3">
                     <asp:LinkButton ID="lbLogin" runat="server" onclick="lbLogin_Click" 
-                        PostBackUrl="~/Logueo.aspx">LOGIN</asp:LinkButton>
+                        PostBackUrl="~/Logueo.aspx" ForeColor="Blue">LOGIN</asp:LinkButton>
                 </td>
             </tr>
         </table>

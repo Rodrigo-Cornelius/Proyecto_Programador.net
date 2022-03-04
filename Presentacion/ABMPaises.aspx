@@ -1,29 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageEmpleado.master" AutoEventWireup="true" CodeFile="ABMPaises.aspx.cs" Inherits="ABMPaises" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
-        .style1
-        {
-            height: 26px;
-        }
-        .style2
-        {
-            height: 23px;
-        }
-    </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table align="center" style="width: 29%;">
         <tr>
-            <td align="center" class="style2" colspan="2">
-                <asp:Label ID="lblTitulo" runat="server" Text="ABM PAISES"></asp:Label>
+            <td align="center" class="style2">
+                <asp:Label ID="lblTitulo" runat="server" Text="ABM PAISES" Font-Bold="True" 
+                    Font-Size="X-Large" ForeColor="#FF6600"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="style1">
+            <td align="center">
                 <asp:Label ID="lblcod" runat="server" Text="Codigo:"></asp:Label>
-            </td>
-            <td align="left" class="style1">
                 <asp:TextBox ID="txtCod" runat="server" Width="200px"></asp:TextBox>
 &nbsp;&nbsp;
                 <asp:Button ID="btnBuscar" runat="server" onclick="btnBuscar_Click" 
@@ -31,10 +21,8 @@
             </td>
         </tr>
         <tr>
-            <td align="right" class="style1">
+            <td align="center">
                 <asp:Label ID="lblNom" runat="server" Text="Nombre:"></asp:Label>
-            </td>
-            <td align="left" class="style1">
                 <asp:TextBox ID="txtNom" runat="server" Width="200px"></asp:TextBox>
 &nbsp;&nbsp;
                 <asp:Button ID="btnLimpiar" runat="server" onclick="btnLimpiar_Click" 
@@ -42,7 +30,7 @@
             </td>
         </tr>
         <tr>
-            <td align="center" colspan="2">
+            <td align="center">
                 <asp:Button ID="btnAlta" runat="server" Text="Agregar" 
                     onclick="btnAlta_Click" />
 &nbsp;&nbsp;&nbsp;
@@ -54,7 +42,7 @@
             </td>
         </tr>
         <tr>
-            <td align="center" colspan="2">
+            <td align="center">
                 <asp:Label ID="lblError" runat="server"></asp:Label>
             </td>
         </tr>

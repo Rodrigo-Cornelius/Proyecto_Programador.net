@@ -6,3 +6,7 @@ C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.
 C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
 C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
 C:\Users\Gary\Documents\Git_Repositorios\ProyectoFinal.net\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb
+C:\Users\Chule\Desktop\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Chule\Desktop\Proyecto_Programador.net\EntidadesCompartidas\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Chule\Desktop\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.dll
+C:\Users\Chule\Desktop\Proyecto_Programador.net\EntidadesCompartidas\obj\Debug\EntidadesCompartidas.pdb

@@ -1,12 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageEmpleado.master" AutoEventWireup="true" CodeFile="ABMUsuarios.aspx.cs" Inherits="ABMUsuarios" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+    .style2
+    {
+        height: 26px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table align="center" style="width: 35%;">
         <tr>
-            <td align="center" colspan="2">
-                <asp:Label ID="lblTitulo" runat="server" Text="ABM USUARIOS"></asp:Label>
+            <td align="center" colspan="2" class="style2">
+                <asp:Label ID="lblTitulo" runat="server" Text="ABM USUARIOS" Font-Bold="True" 
+                    Font-Size="X-Large" ForeColor="#FF6600"></asp:Label>
             </td>
         </tr>
         <tr>

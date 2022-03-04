@@ -6,14 +6,15 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body bgcolor="#efefef">
     <form id="form1" runat="server">
     <div>
         <table align="center" style="width: 40%;">
             <tr>
                 <td align="center" colspan="2">
                     <asp:Label ID="Label1" runat="server" 
-                        Text="Bienvenido al Sistema de Pronosticos"></asp:Label>
+                        Text="Bienvenido al Sistema de Pronosticos" Font-Bold="True" 
+                        Font-Italic="True" Font-Size="X-Large" ForeColor="#FF6600"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -26,17 +27,17 @@
             </tr>
             <tr>
                 <td align="right" class="style2">
-&nbsp;<asp:Label ID="Label2" runat="server" Text="Usuario:"></asp:Label>
+&nbsp;<asp:Label ID="Label2" runat="server" Text="USUARIO:"></asp:Label>
                 </td>
-                <td align="center" class="style1">
+                <td align="left" class="style1">
                     <asp:TextBox ID="txtUsu" runat="server" Width="200px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td align="right" class="style4">
-                    <asp:Label ID="Label3" runat="server" Text="Contraseña:"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="CONTRASEÑA:"></asp:Label>
                 </td>
-                <td align="center">
+                <td align="left">
                     <asp:TextBox ID="txtPass" runat="server" Width="200px"></asp:TextBox>
                 </td>
             </tr>
@@ -53,7 +54,8 @@
             </tr>
             <tr>
                 <td align="center" class="style3" colspan="2">
-                    <asp:LinkButton ID="lbtnVolver" runat="server" PostBackUrl="~/Default.aspx">Volver</asp:LinkButton>
+                    <asp:LinkButton ID="lbtnVolver" runat="server" PostBackUrl="~/Default.aspx" 
+                        ForeColor="Blue">VOLVER</asp:LinkButton>
                 </td>
             </tr>
         </table>
