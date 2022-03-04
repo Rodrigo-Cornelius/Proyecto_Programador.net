@@ -33,9 +33,11 @@
                                     NavigateUrl="~/RegistrarPronostico.aspx">
                                 </asp:MenuItem>
                                 <asp:MenuItem Text="Listado de Pronosticos por Ciudad" 
-                                    Value="Listado de Pronosticos por Ciudad"></asp:MenuItem>
+                                    Value="Listado de Pronosticos por Ciudad" 
+                                    NavigateUrl="~/ListadoPorCiudad.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Listado de Pronosticos por Fecha" 
-                                    Value="Listado de Pronosticos por Fecha"></asp:MenuItem>
+                                    Value="Listado de Pronosticos por Fecha" 
+                                    NavigateUrl="~/ListadoPorFecha.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#284E98" ForeColor="White" />

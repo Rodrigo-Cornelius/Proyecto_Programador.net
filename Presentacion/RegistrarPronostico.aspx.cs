@@ -27,6 +27,8 @@ public partial class RegistrarPronostico : System.Web.UI.Page
                     Session["ListadoCiudades"] = colCiudades;
                     gvCiudad.DataSource = colCiudades;
                     gvCiudad.DataBind();
+
+
                 }
                 else
                 {

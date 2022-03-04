@@ -28,5 +28,10 @@ namespace Logica
         {
             return PersistenciaPronostico.Buscar(pUsuario);
         }
+
+        public static List<Pronostico> Buscar(Ciudad pCiudad)
+        {
+            return PersistenciaPronostico.Buscar(pCiudad);
+        }
     }
 }

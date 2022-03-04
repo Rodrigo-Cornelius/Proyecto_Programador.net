@@ -74,6 +74,10 @@ namespace EntidadesCompartidas
                 fechaHora = value;
             }
         }
+        public string ShortDate
+        {
+            get { return fechaHora.ToShortDateString(); }
+        }
         public int ProbLluvias
         {
             get { return probLluvias; }
