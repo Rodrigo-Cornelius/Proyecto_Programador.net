@@ -95,7 +95,7 @@ namespace Persistencia
 
                 if (oReader.HasRows)
                 {
-                    if (oReader.Read())
+                    while (oReader.Read())
                     {
                         codigo = (int)oReader["codigo"];
                         probLluvias = (int)oReader["probLluvias"];
@@ -182,67 +182,7 @@ namespace Persistencia
             return codPeri;
         }
 
-        public static List<Pronostico> ListarPronosticos(Ciudad pCiudad)
-        {
-            List<Pronostico> resPronosticos = new List<Pronostico>();
-            int codigo;
-            int maxTemp, minTemp;
-            int velViento, probLluvias;
-            string tipoCielo, userName;
-            DateTime fechaHora;
-            Ciudad ciudad;
-            Usuario usuario;
-
-
-
-            SqlDataReader oReader;
-
-            SqlConnection oConexion = new SqlConnection(Conexion.STR);
-
-            SqlCommand oComando = new SqlCommand("ListadoPronosticosXCiudad", oConexion);
-            oComando.CommandType = CommandType.StoredProcedure;
-            oComando.Parameters.AddWithValue("@codC", pCiudad.CodigoC);
-            oComando.Parameters.AddWithValue("@codP", pCiudad.CodigoP);
-
-            try
-            {
-                oConexion.Open();
-                oReader = oComando.ExecuteReader();
-
-                if (oReader.HasRows)
-                {
-                    while (oReader.Read())
-                    {
-
-                        codigo = Convert.ToInt32(oReader["codigo"]);
-                        maxTemp = Convert.ToInt32(oReader["maxTemp"]);
-                        minTemp = Convert.ToInt32(oReader["minTemp"]);
-                        velViento = Convert.ToInt32(oReader["velViento"]);
-                        probLluvias = Convert.ToInt32(oReader["probLluvias"]);
-                        tipoCielo = Convert.ToString(oReader["tipoCielo"]);
-                        userName = Convert.ToString(oReader["userName"]);
-                        fechaHora = Convert.ToDateTime(oReader["fechaHora"]);
-
-                        ciudad = PersistenciaCiudad.Buscar(pCiudad.CodigoC, pCiudad.CodigoP);
-                        usuario = PersistenciaUsuario.Buscar(userName);
-
-                        Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, fechaHora, probLluvias, ciudad, usuario);
-                        resPronosticos.Add(oPronostico);
-                    }
-                }
-                oReader.Close();
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                oConexion.Close();
-            }
-            return resPronosticos;
-        }
+        
 
         public static List<Pronostico> ListarPronosticos(DateTime pDateTime)
         {

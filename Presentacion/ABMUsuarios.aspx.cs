@@ -72,6 +72,12 @@ public partial class ABMUsuarios : System.Web.UI.Page
                 txtApe.Text = pUsuario.Apellido;
 
                 ActivoBotones(false);
+                Usuario usuarioLogueado = (Usuario)Session["Usuario"];
+
+                if (logUser == usuarioLogueado.UserName)
+                {
+                    btnBaja.Enabled = false;
+                }
 
                 Session["UsuarioBuscado"] = pUsuario;
 

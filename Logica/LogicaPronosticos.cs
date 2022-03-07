@@ -15,11 +15,7 @@ namespace Logica
             return PersistenciaPronostico.Agregar(pPronostico);
         }
 
-        public static List<Pronostico> ListarPronosticos(Ciudad pCiudad)
-        {
-            return PersistenciaPronostico.ListarPronosticos(pCiudad);
-        }
-
+       
         public static List<Pronostico> ListarPronosticos(DateTime pFecha)
         {
             return PersistenciaPronostico.ListarPronosticos(pFecha);

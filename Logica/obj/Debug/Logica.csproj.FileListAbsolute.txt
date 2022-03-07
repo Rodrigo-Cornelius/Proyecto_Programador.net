@@ -25,3 +25,12 @@ C:\Users\Chule\Desktop\Proyecto_Programador.net\Logica\bin\Debug\Persistencia.pd
 C:\Users\Chule\Desktop\Proyecto_Programador.net\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\Users\Chule\Desktop\Proyecto_Programador.net\Logica\obj\Debug\Logica.dll
 C:\Users\Chule\Desktop\Proyecto_Programador.net\Logica\obj\Debug\Logica.pdb
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\bin\Debug\Logica.dll
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\bin\Debug\Logica.pdb
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\bin\Debug\EntidadesCompartidas.dll
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\bin\Debug\Persistencia.dll
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\bin\Debug\EntidadesCompartidas.pdb
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\bin\Debug\Persistencia.pdb
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\obj\Debug\Logica.dll
+C:\Users\Gary\Documents\Git_Repositorios\Proyecto_Programador.net-main\Logica\obj\Debug\Logica.pdb
