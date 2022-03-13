@@ -53,6 +53,7 @@ public partial class ListadoPorCiudad : System.Web.UI.Page
             gvPronosticos.DataBind();
             gvCiudades.SelectedIndex = -1;
             string opcion = ddlPaises.SelectedValue;
+
             if (opcion == "0")
             {
                 gvCiudades.DataSource = null;
@@ -82,9 +83,6 @@ public partial class ListadoPorCiudad : System.Web.UI.Page
                 gvCiudades.DataSource = ciudadesPorPais;
                 gvCiudades.DataBind();
                 Session["CiudadesActuales"] = ciudadesPorPais;
-
-
-               
             }
         }
         catch (Exception ex)
@@ -105,8 +103,17 @@ public partial class ListadoPorCiudad : System.Web.UI.Page
 
             List<Pronostico> pronoPorCiudad = LogicaPronosticos.Buscar(ciudadSeleccionada);
 
-            gvPronosticos.DataSource = pronoPorCiudad;
-            gvPronosticos.DataBind();
+            if (pronoPorCiudad.Count == 0)
+            {
+                gvPronosticos.DataSource = null;
+                gvPronosticos.DataBind();
+                throw new Exception("No existen pronosticos para la Ciudad seleccionada");
+            }
+            else
+            {
+                gvPronosticos.DataSource = pronoPorCiudad;
+                gvPronosticos.DataBind();
+            }
         }
         catch (Exception ex)
         {

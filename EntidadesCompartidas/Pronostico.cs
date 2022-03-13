@@ -65,14 +65,7 @@ namespace EntidadesCompartidas
         public DateTime FechaHora
         {
             get { return fechaHora; }
-            set
-            {
-                if (DateTime.Compare(value, DateTime.Today) <= 0)
-                {
-                    throw new Exception("El pronostico debe ser realizado para una fecha y hora mayor a la actual");
-                }
-                fechaHora = value;
-            }
+            set { fechaHora = value; }
         }
         public string ShortDate
         {

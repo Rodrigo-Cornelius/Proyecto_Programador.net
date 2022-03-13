@@ -46,7 +46,7 @@ create table Pronosticos
 (
 	Codigo int not null identity primary key,
 	ProbLluvias int not null check(ProbLluvias >= 0 and ProbLluvias <= 100),
-	FechaHora datetime not null, check(FechaHora >= GETDATE()),
+	FechaHora datetime not null,
 	TipoCielo varchar(19) not null check (TipoCielo in('Despejado', 'Parcialmente nuboso', 'Nuboso')),
 	VelViento int not null check(VelViento > 0),
 	MaxTemp int not null,

@@ -33,6 +33,8 @@ public partial class ListadoPorFecha : System.Web.UI.Page
             }
             else
             {
+                gvPronos.DataSource = null;
+                gvPronos.DataBind();
                 throw new Exception("No hay pronosticos para mostrar");
             }
         }
