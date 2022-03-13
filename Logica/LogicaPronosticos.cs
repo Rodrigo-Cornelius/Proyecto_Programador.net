@@ -14,8 +14,6 @@ namespace Logica
         {
             return PersistenciaPronostico.Agregar(pPronostico);
         }
-
-       
         public static List<Pronostico> ListarPronosticos(DateTime pFecha)
         {
             return PersistenciaPronostico.ListarPronosticos(pFecha);
@@ -24,7 +22,6 @@ namespace Logica
         {
             return PersistenciaPronostico.Buscar(pUsuario);
         }
-
         public static List<Pronostico> Buscar(Ciudad pCiudad)
         {
             return PersistenciaPronostico.Buscar(pCiudad);

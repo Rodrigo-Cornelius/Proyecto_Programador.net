@@ -102,7 +102,16 @@ go
 
 insert Pronosticos values (15, '19/02/2032 17:11', 'Despejado', 7, 33, 12, 'MON', 'URU', 'bpirt5'),
 						  (45, '22/06/2023 12:10', 'Parcialmente nuboso', 47, 23, 10, 'MON', 'URU', 'jparram6'),
-						  (90, '19/02/2032 17:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3')
+						  (90, '19/04/2032 14:45', 'Nuboso', 75, 15, 8, 'MUN', 'ALE', 'jparram6'),
+						  (40, '19/06/2032 12:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3'),
+						  (10, '19/06/2032 13:45', 'Despejado', 75, 15, 8, 'MON', 'URU', 'jparram6'),
+						  (90, '19/07/2032 17:45', 'Parcialmente nuboso', 75, 15, 8, 'MON', 'URU', 'febbotts3'),
+						  (20, '19/06/2032 21:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'bpirt5'),
+						  (90, '19/07/2032 22:45', 'Despejado', 75, 15, 8, 'BAR', 'ESP', 'febbotts3'),
+						  (50, '19/02/2032 17:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'bpirt5'),
+						  (22, '21/07/2032 20:45', 'Parcialmente nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3'),
+						  (90, '21/07/2032 17:45', 'Despejado', 75, 15, 8, 'BAR', 'ESP', 'bpirt5'),
+						  (41, '19/02/2032 17:45', 'Nuboso', 75, 15, 8, 'BAR', 'ESP', 'febbotts3')
 go
 
 
@@ -436,6 +445,7 @@ create proc ListadoPronosticosXCiudad
 as
 begin
 	select * from Pronosticos where CodigoC = @CodC and CodigoP = @CodP
+	order by FechaHora
 end
 go
 

@@ -182,8 +182,6 @@ namespace Persistencia
             return codPeri;
         }
 
-        
-
         public static List<Pronostico> ListarPronosticos(DateTime pDateTime)
         {
             List<Pronostico> resPronosticos = new List<Pronostico>();
@@ -246,6 +244,5 @@ namespace Persistencia
             }
             return resPronosticos;
         }
-
     }
 }
