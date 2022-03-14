@@ -233,7 +233,7 @@ as
 begin
 	if not exists (select * from Paises where CodigoP = @CodP)
 		return -1
-	if exists (select * from Ciudades where CodigoC = @CodC)
+	if exists (select * from Ciudades where CodigoC = @CodC and CodigoP = @CodP)
 		return -2
 	
 	insert Ciudades (CodigoC, Nombre, CodigoP) values (@CodC, @Nom, @CodP)
@@ -245,10 +245,11 @@ end
 go
 
 create proc BajaCiudad
-@CodC varchar(3)
+@CodC varchar(3),
+@CodP varchar(3)
 as
 begin
-	if not exists (select * from Ciudades where CodigoC = @CodC)
+	if not exists (select * from Ciudades where CodigoC = @CodC and CodigoP = @CodP)
 		return -1
 		
 	begin tran
@@ -271,14 +272,15 @@ go
 
 create proc ModificarCiudad
 @CodC varchar(3),
+@CodP varchar(3),
 @Nom varchar(30)
 as
 begin
-	if not exists (select * from Ciudades where CodigoC = @CodC)
+	if not exists (select * from Ciudades where CodigoC = @CodC and CodigoP = @CodP)
 		return -1
 		
 	update Ciudades set Nombre = @Nom
-	where CodigoC = @CodC
+	where CodigoC = @CodC and CodigoP = @CodP
 	if @@ERROR <> 0
 		return -2
 		
@@ -378,7 +380,7 @@ as
 begin
 	declare @CodPro int
 	
-	if exists (select * from Pronosticos where FechaHora = @FechaHora and CodigoC = @CodC)
+	if exists (select * from Pronosticos where FechaHora = @FechaHora and CodigoC = @CodC and CodigoP = @CodP)
 		return -1
 		
 	insert Pronosticos (ProbLluvias, FechaHora, TipoCielo, VelViento, MaxTemp, MinTemp, CodigoC, CodigoP, UserName)

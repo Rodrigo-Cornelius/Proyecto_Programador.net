@@ -45,6 +45,7 @@ public partial class ListadoPorCiudad : System.Web.UI.Page
             lblError.Text = ex.Message;
         }
     }
+
     protected void ddlPaises_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -92,7 +93,6 @@ public partial class ListadoPorCiudad : System.Web.UI.Page
         }
         
     }
-
 
     protected void gvCiudades_SelectedIndexChanged(object sender, EventArgs e)
     {
