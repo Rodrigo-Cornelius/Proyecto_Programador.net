@@ -13,7 +13,8 @@ namespace Logica
     {
         public static Ciudad Buscar(string pCodC, string pCodP)
         {
-            return PersistenciaCiudad.Buscar(pCodC, pCodP);
+            Pais pPais = PersistenciaPais.Buscar(pCodP);
+            return PersistenciaCiudad.Buscar(pCodC, pPais);
         }
 
         public static void AgregarCiudad(Ciudad pCiudad)

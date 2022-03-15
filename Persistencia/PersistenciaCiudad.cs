@@ -12,7 +12,7 @@ namespace Persistencia
 {
     public class PersistenciaCiudad
     {
-        public static Ciudad Buscar(string pCodC, string pCodP)
+        public static Ciudad Buscar(string pCodC, Pais pPais)
         {
             string nombre;
             Ciudad resCiudad = null;
@@ -24,7 +24,7 @@ namespace Persistencia
             oComando.CommandType = CommandType.StoredProcedure;
 
             oComando.Parameters.AddWithValue("@codC", pCodC);
-            oComando.Parameters.AddWithValue("@codP", pCodP);
+            oComando.Parameters.AddWithValue("@codP", pPais.CodigoP);
 
             try
             {
@@ -37,7 +37,7 @@ namespace Persistencia
                     {
                         nombre = (string)oReader["nombre"];
 
-                        resCiudad = new Ciudad(pCodP, pCodC, nombre);
+                        resCiudad = new Ciudad(pPais, pCodC, nombre);
                     }
 
                 }
@@ -61,7 +61,7 @@ namespace Persistencia
             SqlCommand oComando = new SqlCommand("AltaCiudad", oConexion);
             oComando.CommandType = CommandType.StoredProcedure;
 
-            oComando.Parameters.AddWithValue("@CodP", pCiudad.CodigoP);
+            oComando.Parameters.AddWithValue("@CodP", pCiudad.Pais.CodigoP);
             oComando.Parameters.AddWithValue("@CodC", pCiudad.CodigoC);
             oComando.Parameters.AddWithValue("@Nom", pCiudad.Nombre);
 
@@ -82,7 +82,7 @@ namespace Persistencia
                 }
                 if (resultado == -2)
                 {
-                    throw new Exception("Ya existe una ciudad que tiene ese codigo");
+                    throw new Exception("Ya existe una ciudad que tiene ese codigo para ese pais");
                 }
                 if (resultado == -3)
                 {
@@ -106,6 +106,7 @@ namespace Persistencia
             oComando.CommandType = CommandType.StoredProcedure;
 
             oComando.Parameters.AddWithValue("@CodC", pCiudad.CodigoC);
+            oComando.Parameters.AddWithValue("@CodP", pCiudad.Pais.CodigoP);
 
             SqlParameter oRetorno = new SqlParameter("@Retorno", SqlDbType.Int);
             oRetorno.Direction = ParameterDirection.ReturnValue;
@@ -141,6 +142,7 @@ namespace Persistencia
         {
             List<Ciudad> resCiudad = new List<Ciudad>();
             string codigoP, codigoC, nombre;
+            Pais paisP;
 
 
             SqlDataReader oReader;
@@ -163,7 +165,9 @@ namespace Persistencia
                         nombre = Convert.ToString(oReader["Nombre"]);
                         codigoP = Convert.ToString(oReader["CodigoP"]);
 
-                        Ciudad pCiudad = new Ciudad(codigoP, codigoC, nombre);
+                        paisP = PersistenciaPais.Buscar(codigoP);
+
+                        Ciudad pCiudad = new Ciudad(paisP, codigoC, nombre);
 
                         resCiudad.Add(pCiudad);
                     }
@@ -186,6 +190,7 @@ namespace Persistencia
         {
             List<Ciudad> resCiudad = new List<Ciudad>();
             string codigoP, codigoC, nombre;
+            Pais paisP;
 
 
             SqlDataReader oReader;
@@ -209,7 +214,9 @@ namespace Persistencia
                         nombre = Convert.ToString(oReader["Nombre"]);
                         codigoP = Convert.ToString(oReader["CodigoP"]);
 
-                        Ciudad pCiudad = new Ciudad(codigoP, codigoC, nombre);
+                        paisP = PersistenciaPais.Buscar(codigoP);
+
+                        Ciudad pCiudad = new Ciudad(paisP, codigoC, nombre);
 
                         resCiudad.Add(pCiudad);
                     }
@@ -235,6 +242,7 @@ namespace Persistencia
             oComando.CommandType = CommandType.StoredProcedure;
 
             oComando.Parameters.AddWithValue("@CodC", pCiudad.CodigoC);
+            oComando.Parameters.AddWithValue("@CodP", pCiudad.Pais.CodigoP);
             oComando.Parameters.AddWithValue("@Nom", pCiudad.Nombre);
 
             SqlParameter oRetorno = new SqlParameter("@Retorno", SqlDbType.Int);

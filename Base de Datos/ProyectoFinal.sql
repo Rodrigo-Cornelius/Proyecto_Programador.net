@@ -253,13 +253,13 @@ begin
 		return -1
 		
 	begin tran
-		delete Pronosticos where CodigoC = @CodC
+		delete Pronosticos where CodigoC = @CodC and CodigoP = @CodP
 		if @@ERROR <> 0
 			begin
 				rollback tran
 				return -2
 			end
-		delete Ciudades where CodigoC = @CodC
+		delete Ciudades where CodigoC = @CodC and CodigoP = @CodP
 		if @@ERROR <> 0
 			begin
 				rollback tran

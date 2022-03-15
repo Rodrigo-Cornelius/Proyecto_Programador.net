@@ -8,22 +8,22 @@ namespace EntidadesCompartidas
     public class Ciudad
     {
         #region Atributos
-        string codigoP;
+        Pais pais;
         string codigoC;
         string nombre;
         #endregion
 
         #region Propiedades
-        public string CodigoP
+        public Pais Pais
         {
-            get { return codigoP; }
+            get { return pais; }
             set
             {
-                if (value.Trim().Length != 3 || value.Trim().Any(char.IsDigit) || value.Trim().Contains(" ") || value.Trim() == "")
+                if (value == null)
                 {
-                    throw new Exception("El codigo de pais debe tener tres letras");
+                    throw new Exception("Debe existir algun pais asociado");
                 }
-                codigoP = value.Trim();
+                pais = value;
             }
         }
         public string CodigoC
@@ -54,12 +54,18 @@ namespace EntidadesCompartidas
                 nombre = value.Trim();
             }
         }
+
+        public string CodigoP
+        {
+            get { return pais.CodigoP; }
+        }
+
         #endregion
 
         #region Constructor completo
-        public Ciudad(string pCodigoP, string pCodigoC, string pNombre)
+        public Ciudad(Pais pPais, string pCodigoC, string pNombre)
         {
-            CodigoP = pCodigoP;
+            Pais = pPais;
             CodigoC = pCodigoC;
             Nombre = pNombre;
         }
@@ -68,7 +74,7 @@ namespace EntidadesCompartidas
         #region Operaciones
         public override string ToString()
         {
-            return ("Codigo pais: " + CodigoP + "Codigo ciudad: " + CodigoC + "\nNombre de la Ciudad: " + Nombre);
+            return ("Codigo pais: " + Pais.CodigoP + "Codigo ciudad: " + CodigoC + "\nNombre de la Ciudad: " + Nombre);
         }
         #endregion
     }

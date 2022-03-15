@@ -20,6 +20,7 @@ namespace Persistencia
             int maxTemp, minTemp;
             DateTime fechaHora;
             Ciudad ciudad;
+            Pais pPais;
 
             Pronostico oProno = null;
 
@@ -47,7 +48,9 @@ namespace Persistencia
                         velViento = (int)oReader["velViento"];
                         maxTemp = (int)oReader["maxTemp"];
                         minTemp = (int)oReader["minTemp"];
-                        ciudad = PersistenciaCiudad.Buscar((string)oReader["codigoC"], (string)oReader["codigoP"]);
+                        pPais = PersistenciaPais.Buscar((string)oReader["codigoP"]);
+                        
+                        ciudad = PersistenciaCiudad.Buscar((string)oReader["codigoC"], pPais);
 
                         oProno = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, fechaHora, probLluvias, ciudad, pUserName);
                         resPronos.Add(oProno);
@@ -86,7 +89,7 @@ namespace Persistencia
             oComando.CommandType = CommandType.StoredProcedure;
 
             oComando.Parameters.AddWithValue("@CodC", pCiudad.CodigoC);
-            oComando.Parameters.AddWithValue("@CodP", pCiudad.CodigoP);
+            oComando.Parameters.AddWithValue("@CodP", pCiudad.Pais.CodigoP);
 
             try
             {
@@ -142,7 +145,7 @@ namespace Persistencia
             oComando.Parameters.AddWithValue("@MaxTemp", pPronostico.MaxTemp);
             oComando.Parameters.AddWithValue("@MinTemp", pPronostico.MinTemp);
             oComando.Parameters.AddWithValue("@CodC", pPronostico.Ciudad.CodigoC);
-            oComando.Parameters.AddWithValue("@CodP", pPronostico.Ciudad.CodigoP);
+            oComando.Parameters.AddWithValue("@CodP", pPronostico.Ciudad.Pais.CodigoP);
             oComando.Parameters.AddWithValue("@UserName", pPronostico.Usuario.UserName);
 
             SqlParameter oRetorno = new SqlParameter("@Retorno", SqlDbType.Int);
@@ -192,6 +195,7 @@ namespace Persistencia
             Ciudad ciudad;
             Usuario usuario;
             DateTime resultDateTime;
+            Pais pPais;
 
 
 
@@ -224,7 +228,9 @@ namespace Persistencia
                         codigoP = Convert.ToString(oReader["codigoP"]);
                         resultDateTime = Convert.ToDateTime(oReader["fechaHora"]);
 
-                        ciudad = PersistenciaCiudad.Buscar(codigoC, codigoP);
+                        pPais = PersistenciaPais.Buscar(codigoP);
+
+                        ciudad = PersistenciaCiudad.Buscar(codigoC, pPais);
                         usuario = PersistenciaUsuario.Buscar(userName);
 
                         Pronostico oPronostico = new Pronostico(codigo, maxTemp, minTemp, velViento, tipoCielo, resultDateTime, probLluvias, ciudad, usuario);

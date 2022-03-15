@@ -73,7 +73,7 @@ public partial class ABMCiudades : System.Web.UI.Page
 
             if (pCiudad != null)
             {
-                txtCodP.Text = pCiudad.CodigoP;
+                txtCodP.Text = pCiudad.Pais.CodigoP;
                 txtNom.Text = pCiudad.Nombre;
 
                 ActivoBotones(false);
@@ -152,7 +152,10 @@ public partial class ABMCiudades : System.Web.UI.Page
             string codC = Convert.ToString(txtCodC.Text).Trim();
             string pNombre = Convert.ToString(txtNom.Text).Trim();
 
-            Ciudad pCiudad = new Ciudad(codP, codC, pNombre);
+            Pais pPais = LogicaPaises.Buscar(codP);
+
+
+            Ciudad pCiudad = new Ciudad(pPais, codC, pNombre);
 
             LogicaCiudades.AgregarCiudad(pCiudad);
 
